@@ -35,7 +35,7 @@ exports.relay = function (req, res) {
   if (isValidPin(pin)) {
     gpio.open(pin, "output", function (err) {
       gpio.write(pin, state, function () {
-        gpio.close(pin);
+//        gpio.close(pin);
       });
     });
 
