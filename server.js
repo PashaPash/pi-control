@@ -7,21 +7,15 @@ var express = require('express')
   , routes = require('./routes')
   , http = require('http')
   , path = require('path')
-  , relay = require('pecan-relay');
+  , relay = require('pecan-relay')
+  , config = require('./config');
 
-relay.init(
-{
-  count: 3,
-  names: [
-  'Light 1',
-  'Light 2',
-  'CO2']
-});
+relay.init(config.relay);
 
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || 3000);
+  app.set('port', process.env.PORT || config.web.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
