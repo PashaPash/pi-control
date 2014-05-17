@@ -12,7 +12,7 @@ block content
               label(class='col-sm-2 control-label') #{relay.name}
               div(class='col-md-4')
                 div(class='btn-group')
-                  div(class="#{'btn relay-switch ' + (relay.on ? 'btn-success active' : 'btn-default')}", data-relay-pin='#{relay.pin}', data-relay-state='on') 
+                  div(class="#{'btn relay-switch ' + (relay.on ? 'btn-success active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='on') 
                     | &nbsp;&nbsp;on&nbsp;&nbsp;
-                  div(class="#{'btn relay-switch ' + (!relay.on ? 'btn-danger active' : 'btn-default')}", data-relay-pin='#{relay.pin}', data-relay-state='off') 
+                  div(class="#{'btn relay-switch ' + (!relay.on ? 'btn-danger active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='off') 
                     | &nbsp;&nbsp;off&nbsp;&nbsp;
