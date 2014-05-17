@@ -8,9 +8,11 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , relay = require('pecan-relay')
-  , config = require('./config');
+  , config = require('./config')
+  , relay_schedule = require('relay-schedule');
 
 relay.init(config.relay);
+relay_schedule.init(config.schedule);
 
 var app = express();
 
