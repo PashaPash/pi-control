@@ -18,30 +18,26 @@ exports.index = function (req, res) {
   res.render('index', { title: 'PI Home', relays: relays });
 };
 
-function isValidPin(pin)
+function findRelay(pin)
 {
   for (var i in relays) {
     if (relays[i].pin == pin) {
-      return true;
+      return relays[i]  ;
     }
   }
-  return false;
+  throw 'Invalid pin: ' + pin;;
 }
 
 exports.relay = function (req, res) {
   var pin = parseInt(req.param("pin"));
   var state = req.param("state") == 'on' ? 1 : 0;
 
-  if (isValidPin(pin)) {
-    gpio.open(pin, "output", function (err) {
-      gpio.write(pin, state, function () {
-//        gpio.close(pin);
-      });
-    });
+  var relay = findRelay(pin);
+  console.log(relay.on);
 
-    res.send(pin + ' set to ' + state);
-  }
-  else {
-    throw 'Invalid pin: ' + pin;
-  }
+  gpio.open(pin, "output", function () {
+    gpio.write(pin, state, function () {
+      relay.on = state == 1;
+    });
+  });
 };
