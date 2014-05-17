@@ -9,7 +9,14 @@ var express = require('express')
   , path = require('path')
   , relay = require('pecan-relay');
 
-relay.init();
+relay.init(
+{
+  count: 3,
+  names: [
+  'Light 1',
+  'Light 2',
+  'CO2']
+});
 
 var app = express();
 
