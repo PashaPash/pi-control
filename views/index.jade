@@ -1,5 +1,18 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  div(class='container')
+    h1= title
+  div(class='container')
+    div(class='panel panel-default')
+      div(class='panel-body')
+        form(class='form-horizontal', role='form')
+          each relay in relays
+            div(class='form-group')
+              label(class='col-sm-2 control-label') #{relay.name}
+              div(class='col-md-4')
+                div(class='btn-group')
+                  div(class="#{'btn ' + (relay.on ? 'btn-success active' : 'btn-default')}") 
+                    | &nbsp;&nbsp;on&nbsp;&nbsp;
+                  div(class="#{'btn ' + (!relay.on ? 'btn-danger active' : 'btn-default')}") 
+                    | &nbsp;&nbsp;off&nbsp;&nbsp;
