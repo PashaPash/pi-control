@@ -15,7 +15,7 @@ relay.init(config.relay);
 var app = express();
 
 app.configure(function(){
-  app.set('port', process.env.PORT || config.web.port);
+  app.set('port', config.web.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
   app.use(express.favicon());
