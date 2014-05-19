@@ -1,3 +1,26 @@
+function changeState(pin, state)
+{
+  var stateString = state ? 'on' : 'off';
+  var buttons = $('.relay-switch[data-relay-pin=' + pin + ']')
+
+  var activeButtonClass = state ? 'btn-success' : 'btn-danger';
+  var newActive = buttons.filter('[data-relay-state=' + stateString + ']');
+  newActive
+    .addClass('active')
+    .addClass(activeButtonClass);
+
+  var newPassive = buttons.not(newActive)
+     .addClass('btn-default')
+     .removeClass('btn-success')
+     .removeClass('btn-danger')
+     .removeClass('active')
+  console.log(newPassive)  
+  console.log(newPassive.count);
+  console.log(newPassive.length);
+
+}
+
+
 $(function () {
   $('.relay-switch').click(function () {
     var btn = $(this);
@@ -13,11 +36,13 @@ $(function () {
       state: state
     });
 
-    var secondBtn = $('.relay-switch[data-relay-pin=' + pin + ']')
-      .not(btn)
-      .removeClass('btn-success')
-      .removeClass('btn-danger')
-      .removeClass('active')
-      .addClass('btn-default');
+    changeState(pin, state == 'on');
+  });
+});
+
+$(function () {
+  var socket = io.connect('/');
+  socket.on('set', function (data) {
+    changeState(data.id, data.state);
   });
 });

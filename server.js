@@ -12,6 +12,7 @@ var express = require('express')
   , relay_schedule = require('relay-schedule');
 
 relay.init(config.relay);
+
 relay_schedule.init(config.schedule);
 
 var app = express();
@@ -35,7 +36,13 @@ app.configure('development', function(){
 app.get('/', routes.index);
 app.post('/relay', routes.relay);
 
-
-http.createServer(app).listen(app.get('port'), function(){
+var server = http.createServer(app).listen(app.get('port'), function(){
   console.log("Express server listening on port " + app.get('port'));
+});
+
+// comet
+var io = require('socket.io').listen(server);
+
+relay.on('set', function (data) {
+  io.sockets.emit('set', data);
 });
