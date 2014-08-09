@@ -46,3 +46,12 @@ $(function () {
     changeState(data.id, data.state);
   });
 });
+
+$(function () {
+  loadThemperature();
+});
+
+function loadThemperature() {
+  $(".temperature").load('/temp');
+  setTimeout(loadThemperature, 1000);
+}
