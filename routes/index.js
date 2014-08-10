@@ -13,7 +13,7 @@ exports.relay = function (req, res) {
   var state = req.param("state") == 'on';
 
   relays.set(pin, state, function () {
-    res.end('ok');
+    res.send('ok');
   });
 };
 
@@ -21,24 +21,22 @@ exports.temp = function (req, res) {
   therm.sensors(function (err, ids) {
     if (!!err) {
       console.log(err);
-      res.statusCode = 500;
-      res.end(err.toString());
+      res.send(500, err.toString());
     }
     else if (ids.length > 0) {
       var sensorId = ids[0].trim(); // windows \r trim
       therm.temperature(sensorId, function (err, value) {
         if (!!err) {
           console.log(err);
-          res.statusCode = 500;
-          res.end(err.toString());
+          res.send(500, err.toString());
         }
         else {
-          res.end(value.toString());
+          res.send(value.toString());
         }
       });
     }
     else {
-      res.end("--.--");
+      res.send("--.--");
     }
   });
 };
