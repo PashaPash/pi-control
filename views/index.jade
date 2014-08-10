@@ -2,20 +2,24 @@ extends layout
 
 block content
   div.container
-    h1= title
-  div.container
-    h3
-      | Temperature: 
-      span.temperature
-        | ...
-  div.container
+    div.page-header
+      h1= title
     div.panel.panel-default
+      div.panel-heading
+        h3.panel-title
+          | Temperature
+      div.panel-body.temperature
+        | ...
+    div.panel.panel-default
+      div.panel-heading
+        h3.panel-title
+          | Relays
       div.panel-body
         form.form-horizontal(role='form')
           each relay in relays
             div.form-group
-              label.col-sm-2.control-label #{relay.name}
-              div.col-md-4
+              label.col-xs-6.col-md-2.control-label #{relay.name}
+              div.col-xs-6.col-md-2
                 div.btn-group
                   div(class="#{'btn relay-switch ' + (relay.on ? 'btn-success active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='on') 
                     | &nbsp;&nbsp;on&nbsp;&nbsp;
