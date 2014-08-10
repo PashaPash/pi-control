@@ -48,10 +48,10 @@ $(function () {
 });
 
 $(function () {
-  loadThemperature();
+  loadTemperature();
 });
 
-function loadThemperature() {
-  $(".temperature").load('/temp');
-  setTimeout(loadThemperature, 1000);
+function loadTemperature() {
+  $(".temperature").load('/temp?t=' + new Date().getTime());
+  setTimeout(loadTemperature, 1000);
 }
