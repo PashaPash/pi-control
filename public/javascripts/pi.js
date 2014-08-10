@@ -52,6 +52,7 @@ $(function () {
 });
 
 function loadTemperature() {
-  $(".temperature").load('/temp?t=' + new Date().getTime());
-  setTimeout(loadTemperature, 1000);
+  $(".temperature").load('/temp?t=' + new Date().getTime(), undefined, function(){
+    setTimeout(loadTemperature, 1000);
+  });
 }
