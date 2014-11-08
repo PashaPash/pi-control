@@ -13,14 +13,9 @@ config.relay = {
 
 config.schedule = [
   {
-    id: 1,
-    on: { hour: 18, minute: 45 },
-    off: { hour: 18, minute: 46 }
-  },
-  {
-    id: 2,
-    on: { hour: 18, minute: 47 },
-    off: { hour: 18, minute: 48 }
+    id: 5,
+    on: { hour: 10, minute: 00 },
+    off: { hour: 22, minute: 00 }
   }
 ];
 
