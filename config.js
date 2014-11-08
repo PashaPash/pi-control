@@ -8,13 +8,13 @@ config.relay = [
    },
    {
      name: 'Front Light',
-     on: [13, 30],
-     off: [22, 30]
+     on: [14, 00],
+     off: [23, 00]
    },
    {
      name: 'Back Light',
-     on: [14, 00],
-     off: [23, 00]
+     on: [13, 30],
+     off: [22, 30]
    },
    {
      name: 'Compact Light',
