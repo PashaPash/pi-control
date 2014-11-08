@@ -23,7 +23,7 @@ block content
             div.form-group
               label.col-xs-12.col-md-2.control-label #{relay.name}
               div.btn-group.col-xs-12.col-md-2
-                div(class="#{'btn relay-switch ' + (relay.on ? 'btn-success active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='on') 
+                div(class="#{'btn relay-switch ' + (relay.state ? 'btn-success active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='on') 
                   | &nbsp;&nbsp;on&nbsp;&nbsp;
-                div(class="#{'btn relay-switch ' + (!relay.on ? 'btn-danger active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='off') 
+                div(class="#{'btn relay-switch ' + (!relay.state ? 'btn-danger active' : 'btn-default')}", data-relay-pin='#{relay.id}', data-relay-state='off') 
                   | &nbsp;&nbsp;off&nbsp;&nbsp;

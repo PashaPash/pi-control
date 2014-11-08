@@ -11,11 +11,15 @@ var express = require('express')
   , config = require('./config')
   , relay_schedule = require('relay-schedule');
 
-relay.init(config.relay);
+relay.init(config.relay, function (r) {
+  relay_schedule.initForRelay(r, function (state) {
+    relay.set(r.id, state);
+  })
+});
 
-setTimeout(function () {
-    relay_schedule.init(config.schedule);
-   }, 5000);
+//setTimeout(function () {
+//    relay_schedule.init(config.schedule);
+//   }, 5000);
 
 var app = express();
 

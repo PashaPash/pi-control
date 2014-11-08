@@ -1,22 +1,23 @@
 var config = {};
 
-config.relay = {
-  count: 5,
-  names: [
-    'LED Light',
-    'Back Light',
-    'Front Light',
-    'Compact Light',
-    'CO2'
-  ]
-};
-
-config.schedule = [
-  {
-    id: 5,
-    on: { hour: 10, minute: 00 },
-    off: { hour: 22, minute: 00 }
-  }
+config.relay = [
+   {
+     name: 'LED Light'
+   },
+   {
+     name: 'Front Light'
+   },
+   {
+     name: 'Back Light'
+   },
+   {
+     name: 'Compact Light'
+   },
+   {
+     name: 'CO2',
+     on: [10, 00],
+     off: [22, 00]
+   }
 ];
 
 config.web = {
