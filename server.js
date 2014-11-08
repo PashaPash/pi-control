@@ -13,7 +13,9 @@ var express = require('express')
 
 relay.init(config.relay);
 
-relay_schedule.init(config.schedule);
+setTimeout(function () {
+    relay_schedule.init(config.schedule);
+   }, 5000);
 
 var app = express();
 
