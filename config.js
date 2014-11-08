@@ -2,16 +2,24 @@ var config = {};
 
 config.relay = [
    {
-     name: 'LED Light'
+     name: 'LED Light',
+     on: [13, 30],
+     off: [23, 10]
    },
    {
-     name: 'Front Light'
+     name: 'Front Light',
+     on: [13, 30],
+     off: [22, 30]
    },
    {
-     name: 'Back Light'
+     name: 'Back Light',
+     on: [14, 00],
+     off: [23, 00]
    },
    {
-     name: 'Compact Light'
+     name: 'Compact Light',
+     on: [13, 30],
+     off: [23, 10]
    },
    {
      name: 'CO2',
