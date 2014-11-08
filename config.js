@@ -1,11 +1,14 @@
 var config = {};
 
 config.relay = {
-  count: 3,
+  count: 5,
   names: [
-    'Light 1',
-    'Light 2',
-    'CO2']
+    'LED Light',
+    'Back Light',
+    'Front Light',
+    'Compact Light',
+    'CO2'
+  ]
 };
 
 config.schedule = [
