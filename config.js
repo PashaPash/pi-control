@@ -24,7 +24,7 @@ config.relay = [
    {
      name: 'CO2',
      on: [10, 00],
-     off: [22, 00]
+     off: [19, 00]
    }
 ];
 
