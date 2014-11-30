@@ -21,9 +21,16 @@ relay.init(config.relay, function (r) {
 //    relay_schedule.init(config.schedule);
 //   }, 5000);
 
+var auth = require('http-auth');
+var basic = auth.basic({
+    realm: "PI",
+    file: __dirname + "/data/users.htpasswd" // gevorg:gpass, Sarah:testpass ...
+});
+
 var app = express();
 
 app.configure(function(){
+  app.use(auth.connect(basic));
   app.set('port', config.web.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
