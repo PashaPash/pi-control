@@ -17,7 +17,7 @@ config.relay = [
      off: [22, 30]
    },
    {
-     name: 'Compact Light',
+     name: 'Compact 1',
      on: [13, 30],
      off: [23, 10]
    },
@@ -25,6 +25,11 @@ config.relay = [
      name: 'CO2',
      on: [10, 00],
      off: [19, 00]
+   },
+   {
+     name: 'Compact 2',
+     on: [13, 35],
+     off: [23, 15]
    }
 ];
 
