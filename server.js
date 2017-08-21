@@ -13,6 +13,7 @@ var express = require('express')
 
 relay.init(config.relay, function (r) {
   relay_schedule.initForRelay(r, function (state) {
+    console.log("switching " + r.name + " to " + state + " at " + new Date());
     relay.set(r.id, state);
   })
 });
@@ -22,15 +23,15 @@ relay.init(config.relay, function (r) {
 //   }, 5000);
 
 var auth = require('http-auth');
-var basic = auth.basic({
-    realm: "PI",
-    file: __dirname + "/data/users.htpasswd" // gevorg:gpass, Sarah:testpass ...
-});
+//var basic = auth.basic({
+//    realm: "PI",
+//    file: __dirname + "/data/users.htpasswd" // gevorg:gpass, Sarah:testpass ...
+//});
 
 var app = express();
 
 app.configure(function(){
-  app.use(auth.connect(basic));
+//  app.use(auth.connect(basic));
   app.set('port', config.web.port);
   app.set('views', __dirname + '/views');
   app.set('view engine', 'jade');
