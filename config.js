@@ -2,24 +2,24 @@ var config = {};
 
 config.relay = [
    {
-     name: 'LED Light',
+     name: 'Spot Light',
+     on: [10, 00],
+     off: [20, 00]
+   },
+   {
+     name: 'Air Pump',
+     on: [11, 00],
+     off: [13, 00]
+   },
+   {
+     name: 'Main Light',
      on: [13, 30],
      off: [23, 10]
    },
    {
      name: 'Front Light',
-     on: [14, 00],
+     on: [13, 30],
      off: [23, 00]
-   },
-   {
-     name: 'Back Light',
-     on: [13, 30],
-     off: [22, 30]
-   },
-   {
-     name: 'Compact 1',
-     on: [13, 30],
-     off: [23, 10]
    },
    {
      name: 'CO2',
@@ -27,10 +27,10 @@ config.relay = [
      off: [19, 00]
    },
    {
-     name: 'Compact 2',
-     on: [13, 35],
-     off: [23, 15]
-   }
+     name: 'Back Light',
+     on: [13, 30],
+     off: [23, 00]
+   },
 ];
 
 config.web = {
