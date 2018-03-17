@@ -8,7 +8,7 @@ config.relay = [
    },
    {
      name: 'Air Pump',
-     on: [11, 00],
+     on: [6, 00],
      off: [13, 00]
    },
    {
