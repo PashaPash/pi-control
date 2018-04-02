@@ -9,7 +9,7 @@ config.relay = [
    {
      name: 'Air Pump',
      on: [6, 00],
-     off: [13, 00]
+     off: [13, 30]
    },
    {
      name: 'Main Light',
