@@ -48,7 +48,7 @@ $(function () {
 });
 
 $(function () {
-//  loadTemperature();
+  loadTemperature();
 });
 
 function loadTemperature() {
