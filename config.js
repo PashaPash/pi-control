@@ -28,8 +28,8 @@ config.relay = [
    },
    {
      name: 'Fertilizer',
-     on: [13, 48],
-     off: [13, 49]
+     on: [7, 0],
+     off: [7, 1]
    },
 ];
 
