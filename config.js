@@ -27,9 +27,9 @@ config.relay = [
      off: [21, 00]
    },
    {
-     name: 'R6',
-    //  on: [10, 00],
-    //  off: [10, 05]
+     name: 'Fertilizer',
+     on: [13, 48],
+     off: [13, 49]
    },
 ];
 
