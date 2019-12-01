@@ -2,9 +2,9 @@ var config = {};
 
 config.relay = [
    {
-     name: 'R1',
-    //  on: [10, 00],
-    //  off: [10, 05]
+     name: 'Main Light',
+     on: [13, 30],
+     off: [23, 10]
    },
    {
      name: 'Air Pump',
@@ -12,9 +12,9 @@ config.relay = [
      off: [13, 30]
    },
    {
-     name: 'Main Light',
-     on: [13, 30],
-     off: [23, 10]
+     name: 'Flower Light',
+     on: [11, 00],
+     off: [19, 00]
    },
    {
      name: 'Led Light',
