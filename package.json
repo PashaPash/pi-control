@@ -21,7 +21,7 @@
     "http-auth": "^3.2.3",
     "jade": "*",
     "rpi-gpio": "^0.9.1",
-    "socket.io": "^2.0.4"
+    "socket.io": "^2.4.0"
   },
   "noAnalyze": true,
   "license": "Apache",
