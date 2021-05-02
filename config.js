@@ -12,9 +12,9 @@ config.relay = [
      off: [13, 30]
    },
    {
-     name: 'Flower Light',
-     on: [11, 00],
-     off: [19, 00]
+     name: 'Led Light',
+     on: [13, 30],
+     off: [23, 00]
    },
    {
      name: 'CO2',
@@ -22,9 +22,9 @@ config.relay = [
      off: [21, 00]
    },
    {
-     name: 'Led Light',
-     on: [13, 30],
-     off: [23, 00]
+     name: 'Flower Light',
+     on: [11, 00],
+     off: [19, 00]
    },
    {
      name: 'Fertilizer',
