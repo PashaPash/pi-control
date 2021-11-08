@@ -19,7 +19,7 @@ config.relay = [
    {
      name: 'CO2',
      on: [10, 00],
-     off: [21, 00]
+     off: [14, 00]
    },
    {
      name: 'Flower Light',
