@@ -17,7 +17,7 @@
   ],
   "dependencies": {
     "ds18b20": "^0.1.0",
-    "express": "~3.1.0",
+    "express": "~3.21.2",
     "http-auth": "^3.2.3",
     "jade": "*",
     "rpi-gpio": "^0.9.1",
